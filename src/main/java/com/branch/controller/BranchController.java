@@ -21,6 +21,8 @@ public class BranchController {
 
 	@Autowired
 	BranchService service;
+	
+	//create branch
 
 	@PostMapping(value = "/save")
 	public ResponseEntity<Branch> saveBranch(@RequestBody Branch branch) {
@@ -34,6 +36,7 @@ public class BranchController {
 
 	}
 
+	//fetch branch
 	@GetMapping("/getBranchById/{branchId}")
 	public ResponseEntity<Branch> getBranchById(@PathVariable Integer branchId) {
 		Branch br = service.getBranchById(branchId);
@@ -44,6 +47,8 @@ public class BranchController {
 		}
 
 	}
+	
+	//fetch all branches
 
 	@GetMapping("/getAllBranch")
 	public ResponseEntity<List<Branch>> getAllBranch() {
